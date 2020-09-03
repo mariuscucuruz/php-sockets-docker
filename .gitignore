@@ -1,0 +1,7 @@
+.env
+vypr-configs/
+vyprlogin.txt
+logs/
+
+# ignore IDE
+.idea
