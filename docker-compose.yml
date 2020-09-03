@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  proxy:
+    container_name: proxyserver
+    build:
+      context: .
+      dockerfile: docker/proxy.dockerfile
+    volumes:
+      - ./scripts/:/var/www/scripts/
+      - ./php/:/var/www/php/
+    env_file:
+      - .env
+    ports:
+      - ${SOCKET_PORT}
+    networks:
+      - proximity
+
+  worker:
+    container_name: worker
+    build:
+      context: .
+      dockerfile: docker/worker.dockerfile
+    depends_on:
+      - proxy
+    volumes:
+      - ./scripts/:/var/www/scripts/
+      - ./php/:/var/www/php/
+    env_file:
+      - .env
+    ports:
+      - ${SOCKET_PORT}
+    networks:
+      - proximity
+
+networks:
+  proximity:
+    driver: bridge
