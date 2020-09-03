@@ -1,4 +1,4 @@
-## webber-domains
+## PHP Sockets on Docker
 
 #### Prerequisites
 Install Docker CE, Docker Compose(, PHP v7+).
