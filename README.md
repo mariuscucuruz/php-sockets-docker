@@ -38,11 +38,8 @@ Get the IP address(es) of the container by running the following:
 `docker inspect socketclient | grep "IPAddress"`
 
 #### To Do
-<s>Get the container to test VyprVPN connection by running `./vypr-connect.sh` as part of the build / start-up process. Should it fail for whatever reason it shouldn't interrupt the process but rather print a message to `STDOUT` and continue.</s>
+Do we want the VPN running at boot time?
 
-Incorporate `./run.sh` as part of the build / start-up process. Should it fail for whatever reason it shouldn't interrupt the process but rather print a message to `STDOUT` and continue.
-
-> Both of the above are currently mounted with the container (under `/var/www/`) and can be ran manually.
 <hr />
 
 ## About the setup
